@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "market-intelligence-company-resolution"
+version = "0.1.0"
+description = "Library for company resolution and candidate extraction."
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+authors = [
+  { name = "Unknown" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+
+dependencies = [
+  "pydantic>=2.8,<3",
+  "google-genai>=1.0.0,<2",
+  "tavily>=0.1",
+  "python-dotenv>=1.2.2",
+  "crawl4ai>=0.8.9",
+  "pandas>=3.0.3",
+  "openpyxl>=3.1.5",
+  "openai>=2.41.0",
+  "anthropic>=0.109.1",
+  "gradio>=6.18.0",
+  "streamlit>=1.58.0",
+]
+
+[project.urls]
+homepage = "https://example.com/market-intelligence"
+repository = "https://example.com/market-intelligence"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

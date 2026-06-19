@@ -1,90 +1,63 @@
-# Market Intelligence Report Structure
+# Struktur Laporan Market Intelligence
 
-## 1. Executive Summary
+Laporan yang dihasilkan oleh pipeline saat ini mengikuti format ringkas yang tersusun dari fakta perusahaan, data finansial, serta analisis kapabilitas dan teknologi.
 
-High-level summary of the company, recent business activities, and key opportunities.
+## 1. Header Perusahaan
 
----
+Bagian awal berisi nama perusahaan utama.
 
-## 2. Company Profile
+## 2. Overview
 
-Basic company information:
+Ringkasan singkat mengenai deskripsi perusahaan dan konteks bisnisnya.
 
-- Company Name
-- Industry
-- Description
-- Headquarters
-- Website
-- LinkedIn
+## 3. Financial Information
 
-Evidence:
-- Official Website
-- LinkedIn
+Bagian ini menampilkan data finansial yang relevan, antara lain:
 
----
+- Ticker
+- Sector
+- Sub Sector
+- Listing Board
+- Latest Financial Report
+- Revenue
+- Net Income
+- Total Assets
+- Total Liabilities
+- Total Equity
 
-## 3. Products & Services
+## 4. Industry
 
-Products, services, and solutions offered by the company.
+Informasi sektor industri perusahaan yang didapat dari data IDX atau hasil ekstraksi.
 
-Evidence:
-- Official Website
-- Brochure
-- LinkedIn
+## 5. Headquarters
 
----
+Alamat atau lokasi kantor pusat perusahaan.
 
-## 4. Recent Activities
+## 6. Products & Services
 
-Recent company activities:
+Daftar produk, layanan, atau solusi yang ditawarkan perusahaan.
 
-- Awards
-- Events
-- Partnerships
-- Hiring
-- Product Launches
+## 7. Business Capabilities
 
-Evidence:
-- News
-- LinkedIn
-- Partner Announcement
+Analisis kapabilitas bisnis yang terdeteksi dari konten perusahaan, misalnya:
 
----
+- layanan digital,
+- kemampuan operasi,
+- kompetensi teknologi,
+- aspek bisnis strategis.
 
-## 5. Growth Indicators
+## 8. Potential Technology Needs
 
-Signals indicating business growth or expansion.
+Daftar kebutuhan teknologi yang potensial berdasarkan profil perusahaan dan analisis konten.
 
-Evidence:
-- Recent Activities
-- Hiring
-- Partnerships
+## 9. Partnerships
 
----
+Informasi mitra, kolaborasi, atau kerja sama yang ditemukan dalam sumber publik.
 
-## 6. Risk Indicators
+## 10. Investor Relations
 
-Potential concerns, missing information, or business risks identified from public sources.
+Status atau catatan terkait hubungan investor yang teridentifikasi.
 
-Evidence:
-- Public Sources
-- News
-- Website
+## Catatan
 
----
-
-## 7. Business Assessment
-
-Overall assessment based on available evidence.
-
----
-
-## 8. Opportunity Analysis
-
-Potential business opportunities for Sisindokom.
-
----
-
-## 9. Meeting Preparation
-
-Suggested discussion topics and questions.
+Struktur ini disusun agar selaras dengan template yang digunakan di src/report_generator/templates.py dan data yang dihasilkan oleh src/fact_extraction/models.py.
