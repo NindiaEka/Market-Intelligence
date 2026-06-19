@@ -134,8 +134,14 @@ class MarketIntelligencePipeline:
     def run(self, company_name: str) -> str:
         """Run the full pipeline for a single company and return the generated brief."""
 
-        print(f"\nProcessing: {company_name}")
         filename = self._build_filename(company_name)
+        cache_file = Path("cache") / f"{filename}.md"
+
+        if cache_file.exists():
+            print("\n⚡ Loaded from cache")
+            return cache_file.read_text(encoding="utf-8")
+
+        print(f"\nProcessing: {company_name}")
 
         financial_data = self.resolve_financial_data(company_name)
         website, sources = self.discover_sources(company_name, financial_data)
@@ -185,7 +191,13 @@ class MarketIntelligencePipeline:
         facts = self.detect_capabilities(facts)
         facts = self.detect_technology_needs(facts)
 
-        return self.generate_report(facts, filename)
+        report = self.generate_report(facts, filename)
+
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(report, encoding="utf-8")
+        print("\n💾 Report cached")
+
+        return report
 
     # ------------------------------------------------------------------
     # Pipeline steps (see diagram in PR description / docstring of run())
@@ -422,7 +434,13 @@ class MarketIntelligencePipeline:
     # ------------------------------------------------------------------
 
     def _build_filename(self, company_name: str) -> str:
-        return company_name.lower().replace(" ", "_").replace(".", "")
+        return (
+            company_name
+            .lower()
+            .strip()
+            .replace(".", "")
+            .replace(" ", "_")
+        )
 
     def _extract_via_linkedin(self, sources, fallback_company_name: str):
         """Crawl the LinkedIn page (if any) and extract facts from it.
