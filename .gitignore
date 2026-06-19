@@ -1,0 +1,79 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pdb
+*.pyc
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+*.manifest
+*.spec
+*.log
+
+# Virtual environment
+venv/
+ENV/
+.env/
+.venv/
+
+# Environment files
+.env
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+
+# Local databases
+*.sqlite3
+*.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================
+# Frontend (Next.js)
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# =========================
+# VS Code / IDE
+# =========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Application Data
+# =========================
+backend/cache/
+backend/data/
+backend/downloads/
+
+# =========================
+# Docker
+# =========================
+*.tar
+*.gz
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
