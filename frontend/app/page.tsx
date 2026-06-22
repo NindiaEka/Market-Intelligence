@@ -60,8 +60,12 @@ export default function Home() {
 
       }, 5000);
 
+      const API_URL =
+        process.env.NEXT_PUBLIC_API_URL ||
+        "http://localhost:8000";
+
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/analyze`,
+        `${API_URL}/analyze`,
         {
           method: "POST",
           headers: {
